@@ -6,7 +6,6 @@ import HomePage from "./PAGES/HomePage";
 import Footer from "./Components/Footer";
 import LookBook from "./Components/LookBook";
 import Collections from "./Components/Collections";
-import ProductView from "./Components/ProductView";
 import AllProducts from "./Components/AllProducts";
 import Cart from "./Components/Cart";
 import { BrowserRouter } from "react-router-dom";
@@ -20,6 +19,7 @@ import EditProducts from "./Components/EditProducts";
 import AddProducts from "./Components/AddProducts";
 import Admin from "./PAGES/Admin";
 import AdminLogin from "./PAGES/AdminLogin";
+import ProductView from "./Components/ProductView";
 function App() {
   return (
     <div>

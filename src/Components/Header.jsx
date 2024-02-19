@@ -23,7 +23,7 @@ function Header() {
           onChange={(e) => setSearch(e.target.value)}
           type="text"
           placeholder="Search Products"
-          className="border-solid"
+          className="border-2 text-center"
         />
       </form>
       <div className="flex gap-6 font-semibold font-sans mt-4 md:mt-0">

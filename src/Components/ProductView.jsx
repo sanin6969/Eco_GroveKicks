@@ -19,16 +19,20 @@ function ProductView() {
     }, [id, setProduct]);
 
     const addToCart = () => {
-        let already = false;
-        for (const item of user.cart) {
-            if (item.id === Product.id) {
-                break;
-            }
+        const already=user.cart.some((item)=>item.id==Product.id)
+        if(!already){
+            user.cart.push({...Product,amount:1})
         }
-        if (!already) {
-            user.cart.push({ ...Product, amount: 1 });
-        }
-        console.log(user.cart, "user cart array");
+        // let already = false;
+        // for (const item of user.cart) {
+        //     if (item.id === Product.id) {
+        //         break;
+        //     }
+        // }
+        // if (!already) {
+        //     user.cart.push({ ...Product, amount: 1 });
+        // }
+        // console.log(user.cart, "user cart array");
     };
     return (
         <>

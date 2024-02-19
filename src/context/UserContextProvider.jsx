@@ -5,7 +5,7 @@ import { Products } from "../PAGES/Data";
 export const UserContextProvider = ({ children }) => {
   const [search, setSearch] = useState("");
   const [filterData, setFilterData] = useState([]);
-  const [data, setData] = useState([...Products]);
+  const [data, setData] = useState(Products);
   const [adproduct, setAdproduct] = useState(Products);
   const [user, setUser] = useState(null);
   const [signupUser, setSigupUser] = useState([]);

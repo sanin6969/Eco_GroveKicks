@@ -6,7 +6,7 @@ import { UserContext } from "../context/UserContext";
 import { Products } from "../PAGES/Data";
 const AdminProducts = () => {
   const removeItem = (id) => {
-    const updatedCart = Products.filter((item) => item.id !== id);
+    const updatedCart = data.filter((item) => item.id !== id);
     setData(updatedCart);
   };
   const Nav = useNavigate();
