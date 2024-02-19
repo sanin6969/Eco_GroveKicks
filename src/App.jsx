@@ -44,7 +44,6 @@ function App() {
             <Route path="/editproducts/:id" element={<EditProducts />} />
             <Route path="addproducts" element={<AddProducts />} />
           </Routes>
-          <Footer />
         </BrowserRouter>
       </UserContextProvider>
     </div>

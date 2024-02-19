@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import AllProducts from "../Components/AllProducts";
 import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 function HomePage() {
   return (
     <div>
@@ -88,6 +89,7 @@ function HomePage() {
           </figure>
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
