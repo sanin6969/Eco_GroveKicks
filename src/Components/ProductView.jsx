@@ -10,7 +10,7 @@ import Header from "./Header";
 
 function ProductView() {
     const Nav = useNavigate();
-    const { Product, setProduct, user } =
+    const { Product, setProduct, user ,setUser} =
         useContext(UserContext);
     const { id } = useParams();
     useEffect(() => {
@@ -18,22 +18,32 @@ function ProductView() {
         setProduct(filterProduct);
     }, [id, setProduct]);
 
+    // const addToCart = () => {
+    //     const already=user.cart.some((item)=>item.id==Product.id)
+    //     if(!already){
+    //         user.cart.push({...Product,amount:1})
+    //     }
+    //     // let already = false;
+    //     // for (const item of user.cart) {
+    //     //     if (item.id === Product.id) {
+    //     //         break;
+    //     //     }
+    //     // }
+    //     // if (!already) {
+    //     //     user.cart.push({ ...Product, amount: 1 });
+    //     // }
+    //     // console.log(user.cart, "user cart array");
+    // };
     const addToCart = () => {
-        const already=user.cart.some((item)=>item.id==Product.id)
-        if(!already){
-            user.cart.push({...Product,amount:1})
+        const alreadyInCart = user.cart.some(item => item.id === Product.id);
+        if (!alreadyInCart) {
+            setUser(prevUser => ({
+                ...prevUser,
+                cart: [...prevUser.cart, { ...Product, amount: 1 }]
+            }));
         }
-        // let already = false;
-        // for (const item of user.cart) {
-        //     if (item.id === Product.id) {
-        //         break;
-        //     }
-        // }
-        // if (!already) {
-        //     user.cart.push({ ...Product, amount: 1 });
-        // }
-        // console.log(user.cart, "user cart array");
     };
+    
     return (
         <>
             <div>

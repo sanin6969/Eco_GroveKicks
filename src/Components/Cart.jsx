@@ -3,12 +3,26 @@ import { UserContext } from "../context/UserContext";
 import Header from "./Header";
 
 function Cart() {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
 
   const removeItem = (id) => {
-    let itemremove = user.cart.filter((v) => v.id != id);
-    user.cart = itemremove;
+    const updatedCart = user.cart.filter((item) => item.id !== id);
+    setUser((prevUser) => ({
+      ...prevUser,
+      cart: updatedCart
+    }));
   };
+  
+  // const removeItem = (id) => {
+  //   // let itemremove = user.cart.filter((v) => v.id != id);
+  //   // user.cart = itemremove;
+
+
+  //   // setUser((prevdata) =>({
+  //   //   ...prevdata,
+  //   //     cart: prevdata.cart.filter((v) => v.id!==id)
+  //   // }));
+  // };
   const [add, setAdd] = useState(0);
 
   const Increment = (item) => {
